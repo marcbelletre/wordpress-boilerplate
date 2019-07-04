@@ -5,7 +5,7 @@ Lightweight boilerplate for Wordpress themes.
 ### Getting started ###
 
 *  Download Wordpress from [wordpress.org](https://wordpress.org/download/)  
-*  Clone or download this repository into `wp-content/themes/**your_theme_name**`
+*  Clone or download this repository into `wp-content/themes/{your_theme_name}`
 *  Create a new database for your Wordpress site
 *  Go to your website URL and follow the installation steps
 
