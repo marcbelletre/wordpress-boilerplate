@@ -8,7 +8,7 @@
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.8.1",
+        "version": "5.8.5",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -24,7 +24,8 @@
   "require": {
     "composer/installers": "^1.5",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
-    "wpackagist-plugin/wp-super-cache": "^1.6"
+    "wpackagist-plugin/wp-super-cache": "*",
+    "wpackagist-plugin/wordpress-seo": "*"
   },
   "extra": {
     "installer-paths": {
