@@ -3,7 +3,7 @@ node_modules/
 
 package-lock.json
 composer.lock
+yarn.lock
 
 .env
-.babelrc
 .DS_Store

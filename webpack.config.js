@@ -6,7 +6,7 @@ var config = {
     entry: ['./src/js/app.js'],
     output: {
         filename: 'js/bundle.js',
-        path: path.resolve(__dirname, 'assets')
+        path: path.resolve(__dirname, 'build')
     },
     module: {
         rules: [
@@ -46,7 +46,22 @@ var config = {
             },
             {
                 test: /\.s?css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    'postcss-loader'
+                ]
             }
         ]
     },
@@ -54,13 +69,16 @@ var config = {
         jquery: 'jQuery'
     },
     plugins: [
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        }),
         new MiniCssExtractPlugin({
             filename: 'css/bundle.css'
         })
     ]
 };
 
-module.exports = config;
+module.exports = (env, argv) => {
+    if (argv.mode !== 'production') {
+        config.devtool = 'source-map';
+    }
+
+    return config;
+};

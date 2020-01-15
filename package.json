@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Boilerplate for Wordpress themes",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode=development --progress",
     "watch": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production --progress"
   },
   "repository": {
     "type": "git",
