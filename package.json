@@ -31,5 +31,10 @@
   },
   "peerDependencies": {
     "jquery": "^3.4.1"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "IE 10"
+  ]
 }
