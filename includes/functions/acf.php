@@ -1,6 +1,19 @@
 <?php
-if ( function_exists('acf_add_local_field_group') ) :
 
-    // ACF config goes here
+// // Add ACF options pages
+if (function_exists('acf_add_options_page')) {
+    // acf_add_options_page();
+}
 
-endif;
+/**
+ * Register Google Maps API key
+ *
+ * @param  array $api
+ * @return array
+ */
+function THEME_DOMAIN_acf_google_map_api( $api )
+{
+    $api['key'] = getenv('GMAPS_API_KEY');
+    return $api;
+}
+add_filter( 'acf/fields/google_map/api', 'THEME_DOMAIN_acf_google_map_api' );

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 var config = {
   entry: ['./src/js/app.js'],
@@ -70,7 +71,10 @@ var config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/bundle.css'
+      filename: 'css/[name].css'
+    }),
+    new WebpackNotifierPlugin({
+      alwaysNotify: true
     })
   ]
 };

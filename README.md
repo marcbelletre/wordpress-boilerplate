@@ -8,6 +8,8 @@ Lightweight boilerplate for Wordpress themes.
 *  Clone or download this repository into `wp-content/themes/{your_theme_name}`
 *  Create a new database for your Wordpress site
 *  Go to your website URL and follow the installation steps
+*  Replace theme description in `style.css`
+*  Search and replace every occurence of `THEME_DOMAIN` by a custom prefix in the `includes/functions` directory
 
 ### Development ###
 

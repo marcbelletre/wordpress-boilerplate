@@ -36,5 +36,8 @@
     "last 2 versions",
     "> 0.5%",
     "IE 10"
-  ]
+  ],
+  "dependencies": {
+    "webpack-notifier": "^1.8.0"
+  }
 }

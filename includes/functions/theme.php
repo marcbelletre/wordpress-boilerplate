@@ -2,7 +2,7 @@
 /**
  * Theme
  */
-function pp_theme_setup()
+function THEME_DOMAIN_theme_setup()
 {
     // Add support for post thumbnails
     add_theme_support( 'post-thumbnails' );
@@ -14,4 +14,4 @@ function pp_theme_setup()
         'footer-menu'    => __( 'Footer', 'theme_domain' ),
     ]);
 }
-add_action( 'after_setup_theme', 'pp_theme_setup' );
+add_action( 'after_setup_theme', 'THEME_DOMAIN_theme_setup' );
