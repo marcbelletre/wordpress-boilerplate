@@ -13,3 +13,28 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Navigation principale">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="<?=home_url()?>">
+                        <?php the_custom_logo(); ?>
+                    </a>
+                </div>
+
+                <?php
+                if (has_nav_menu('main')) :
+                    wp_nav_menu([
+                        'theme_location' => 'main',
+                        'menu_class' => 'navbar-menu',
+                        'depth' => 2,
+                        'container' => false,
+                        'items_wrap' => '<div class="%2$s">%3$s</div>',
+                        'walker' => new Bulma_Nav_Walker()
+                    ]);
+                endif;
+                ?>
+            </div>
+        </nav>
+    </header>

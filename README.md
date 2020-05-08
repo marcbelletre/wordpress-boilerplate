@@ -9,7 +9,8 @@ Lightweight boilerplate for Wordpress themes.
 *  Create a new database for your Wordpress site
 *  Go to your website URL and follow the installation steps
 *  Replace theme description in `style.css`
-*  Search and replace every occurence of `THEME_DOMAIN` by a custom prefix in the `includes/functions` directory
+*  Search and replace every occurence of `THEME_PREFIX` by a custom function prefix
+*  Search and replace every occurence of `THEME_DOMAIN` by your theme domain name
 
 ### Development ###
 
@@ -25,9 +26,13 @@ Install dependencies:
 Compile assets:
 
     $ yarn watch
+    $ yarn build
 
-### ACF Pro ###
+## Icons
 
-ACF Pro is required by default and requires a valid key. This key should be set in a `.env` file in the theme's root:
+This project comes with a built-in npm script that makes use of [svg-sprite](https://github.com/jkphl/svg-sprite) to generate an SVG sprite of your icons.  
+To use it, install `svg-sprite` on your computer and put your SVG files in the `src/icons` directory then run the following command:
 
-    ACF_PRO_KEY=***
+```bash
+$ yarn sprite
+```

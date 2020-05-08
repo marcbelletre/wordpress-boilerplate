@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const CopyPlugin = require('copy-webpack-plugin');
 
 var config = {
   entry: ['./src/js/app.js'],
@@ -75,7 +76,13 @@ var config = {
     }),
     new WebpackNotifierPlugin({
       alwaysNotify: true
-    })
+    }),
+    new CopyPlugin([
+      {
+        from: 'node_modules/svgxuse/svgxuse.min.js',
+        to: 'js/svgxuse.min.js'
+      }
+    ])
   ]
 };
 

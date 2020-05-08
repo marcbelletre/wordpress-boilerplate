@@ -1,0 +1,11 @@
+.icon {
+    fill: currentColor;
+
+    @each $name, $pair in $colors {
+        $color: nth($pair, 1);
+
+        &.is-#{$name} {
+            fill: $color;
+        }
+    }
+}
