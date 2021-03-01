@@ -1,0 +1,36 @@
+@each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    .has-#{$name}-background-color {
+        background-color: $color;
+        color: $color-invert;
+    }
+
+    .has-#{$name}-color {
+        color: $color;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $family-secondary;
+    color: inherit;
+}
+
+figure {
+    margin-left: 0;
+    margin-right: 0;
+
+    &.wp-block-table {
+        text-align: inherit;
+    }
+}
+
+iframe {
+    width: 100%;
+}

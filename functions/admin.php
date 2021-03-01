@@ -1,9 +1,10 @@
 <?php
 
 /**
- * Completely disable comments
+ * Register an editor stylesheet for the theme and disable comments.
  */
-add_action( 'admin_init', function () {
+function THEME_PREFIX_admin_init()
+{
     // Redirect any user trying to access comments page
     global $pagenow;
 
@@ -22,7 +23,11 @@ add_action( 'admin_init', function () {
             remove_post_type_support( $post_type, 'trackbacks' );
         }
     }
-} );
+
+    // Add editor stylesheet
+    add_editor_style( '/build/css/editor.css' );
+}
+add_action( 'admin_init', 'THEME_PREFIX_admin_init' );
 
 // Close comments on the front-end
 add_filter( 'comments_open', '__return_false', 20, 2 );

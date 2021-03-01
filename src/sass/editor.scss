@@ -1,0 +1,75 @@
+@import 'fonts';
+@import 'variables';
+
+// Add 280px (sidebar width) to every breakpoint
+$gap: 32px;
+$tablet: 1049px;
+$desktop: 1240px + (2 * $gap);
+$widescreen: 1432px + (2 * $gap);
+$fullhd: 1624px + (2 * $gap);
+
+@import '~bulma/sass/utilities/all';
+@import '~bulma/sass/elements/button';
+@import '~bulma/sass/elements/icon';
+@import '~bulma/sass/elements/title';
+@import '~bulma/sass/base/generic';
+@import 'elements/content';
+
+body {
+    font-family: $family-primary;
+    font-size: $body-size;
+    font-weight: $body-weight;
+    color: $body-color;
+    line-height: $body-line-height;
+    overflow: initial;
+}
+
+strong {
+    font-family: $family-secondary;
+    font-weight: 700;
+    color: inherit;
+}
+
+@import 'shared/gutenberg';
+
+.editor-post-title__input {
+    font-family: $title-family;
+}
+
+.wp-block-separator {
+    border-color: $hr-background-color;
+    border-width: $hr-height;
+    margin: 0;
+
+    &:not(.is-style-wide) {
+        max-width: none;
+    }
+}
+
+.wp-block-quote {
+    border-left: 0;
+    padding-left: 0;
+}
+
+.wp-block-button {
+    margin-right: 0.5rem;
+
+    &__link {
+        font-family: $button-family;
+        font-size: 1rem;
+        text-transform: uppercase;
+        border-style: solid;
+        border-width: $button-border-width;
+        border-radius: 0;
+        padding-top: $button-padding-vertical;
+        padding-left: $button-padding-horizontal;
+        padding-bottom: $button-padding-vertical;
+        padding-right: $button-padding-horizontal;
+
+        &:not(.has-background),
+        &.has-white-background-color {
+            background-color: $white;
+            border-color: $button-border-color;
+        }
+    }
+}

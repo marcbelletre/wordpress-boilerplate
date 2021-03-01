@@ -1,3 +1,3 @@
 try {
-    window.$ = window.jQuery;
+    window.$ = window.jQuery
 } catch (e) {}

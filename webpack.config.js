@@ -5,7 +5,10 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const CopyPlugin = require('copy-webpack-plugin');
 
 var config = {
-  entry: ['./src/js/app.js'],
+  entry: {
+    'app': './src/js/app.js',
+    'editor': './src/js/editor.js'
+  },
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'build')

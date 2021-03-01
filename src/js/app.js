@@ -1,8 +1,8 @@
-require('./bootstrap');
-require('../sass/main.scss');
+import './bootstrap'
+import '../sass/app.scss'
 
-$(function() {
+$(function () {
 
-    console.log('It works!');
+    console.log('It works!')
 
 });

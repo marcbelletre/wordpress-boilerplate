@@ -1,0 +1,121 @@
+.content {
+    @import '../shared/gutenberg';
+
+    p,
+    dl,
+    ol,
+    ul,
+    blockquote,
+    pre,
+    table,
+    figure {
+        &:not(:last-child) {
+            margin-bottom: $block-spacing;
+        }
+    }
+
+    img {
+        vertical-align: top;
+    }
+
+    .alignfull,
+    .alignwide {
+        margin-left: 0;
+        margin-right: 0;
+
+        &:not(:first-child) {
+            margin-top: 4rem;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .blocks-gallery-grid {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .wp-block-gallery {
+        &.alignfull {
+            .blocks-gallery-grid {
+                list-style: none;
+                width: 100vw;
+                height: 45vw;
+                margin-left: 50%;
+                margin-right: 0;
+                transform: translateX(-50vw);
+            }
+
+            .blocks-gallery-item {
+                width: auto;
+                margin: 0;
+
+                img {
+                    object-fit: contain;
+                }
+            }
+        }
+
+        &:not(.alignfull) {
+            figure {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .wp-block-embed {
+        &.wp-embed-aspect-16-9 {
+            & > .wp-block-embed__wrapper {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%;
+
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .wp-block-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .wp-block-columns {
+        @include until(599px) {
+            .wp-block-column:not(:last-child) {
+                margin-bottom: $block-spacing;
+            }
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: $block-spacing;
+    }
+
+    &.is-gutenberg {
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+
+        & > .alignfull {
+            width: 100vw;
+            margin-left: 50%;
+            transform: translateX(-50vw);
+        }
+    }
+
+    @include from($desktop) {
+        &.is-gutenberg > .alignwide {
+            width: 66vw;
+            margin-left: 50%;
+            transform: translateX(-33vw);
+        }
+    }
+}

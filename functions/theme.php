@@ -46,6 +46,9 @@ function THEME_PREFIX_theme_setup()
     add_theme_support( 'disable-custom-colors' );
     add_theme_support( 'align-wide' );
 
+    // Add support for editor stylesheet
+    add_theme_support( 'editor-styles' );
+
     // Customize color palette
     add_theme_support( 'editor-color-palette', array(
         array(
