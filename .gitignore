@@ -1,9 +1,6 @@
 node_modules/
-/vendor/
+vendor/
 
 package-lock.json
-composer.lock
-yarn.lock
 
-.env
 .DS_Store
